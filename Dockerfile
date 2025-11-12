@@ -14,7 +14,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
 
 # Install dependencies
 COPY --chown=node:node package*.json ./
-RUN npm ci --omit=dev
+RUN npm ci --omit=dev --legacy-peer-deps
 
 # Copy app source and healthcheck
 COPY --chown=node:node . .
@@ -29,7 +29,7 @@ FROM louislam/uptime-kuma:base2 AS release
 WORKDIR /app
 USER node
 
-LABEL org.opencontainers.image.source="https://github.com/louislam/uptime-kuma"
+LABEL org.opencontainers.image.source="https://github.com/amirparsadd/uptimekuma-docker"
 ENV UPTIME_KUMA_IS_CONTAINER=1
 
 # Copy built app
