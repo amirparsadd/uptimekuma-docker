@@ -13,7 +13,12 @@ jobs:
       packages: write
 
     steps:
-      - name: Checkout upstream repo
+      - name: Checkout current repo
+        uses: actions/checkout@v4
+        with:
+          path: current
+
+      - name: Checkout upstream Uptime Kuma
         uses: actions/checkout@v4
         with:
           repository: louislam/uptime-kuma
@@ -33,5 +38,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./uptime-kuma
+          file: ./current/Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/uptimekuma:latest
