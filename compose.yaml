@@ -1,0 +1,9 @@
+services:
+  uptimekuma:
+    image: ghcr.io/amirparsadd/uptimekuma:latest
+    container_name: uptime-kuma
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./data:/app/data
