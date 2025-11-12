@@ -22,6 +22,9 @@ COPY --from=build_healthcheck /app/extra/healthcheck /app/extra/healthcheck
 
 RUN mkdir ./data
 
+## Build
+RUN npm run build
+
 # --------------------------------------------------------
 # Stage 3: Final runtime image
 # --------------------------------------------------------
