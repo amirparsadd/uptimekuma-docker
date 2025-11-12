@@ -14,7 +14,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
 
 # Install dependencies
 COPY --chown=node:node package*.json ./
-RUN npm ci --omit=dev --legacy-peer-deps
+RUN npm install --legacy-peer-deps
 
 # Copy app source and healthcheck
 COPY --chown=node:node . .
