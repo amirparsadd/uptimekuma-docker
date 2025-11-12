@@ -29,11 +29,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_PAT }}
 
-      - name: Build and Push Docker image (release stage)
+      - name: Build and Push Docker image
         uses: docker/build-push-action@v6
         with:
           context: ./uptime-kuma
-          file: ./uptime-kuma/docker/dockerfile
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/uptimekuma:latest
-          target: release  # stops build before upload-artifact stage
