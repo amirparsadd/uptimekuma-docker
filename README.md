@@ -30,4 +30,4 @@ This build keeps everything up to date, built directly from the latest commits.
 
 ---
 
-💡 This is not an official Uptime Kuma project. All credit goes to Louis Lam￼ and contributors.
+💡 This is not an official Uptime Kuma project. All credit goes to Louis Lam and contributors.
